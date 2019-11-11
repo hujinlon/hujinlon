@@ -1,8 +1,8 @@
 package student;
 import java.util.*;
 public class Student {
-	public StringBuffer name;
-	public static int a=-1;
+	public StringBuffer data;
+	public static int a=5;
   public static void main(String[] args) {
 	  Scanner sc=new Scanner(System.in);
 	  Student sd=new Student();
@@ -17,15 +17,15 @@ public class Student {
 public static Student add(Student sd) {
 	StringBuffer st=new StringBuffer();
 	Scanner sc=new Scanner(System.in);
-	System.out.println("请输入学生姓名：");
+	System.out.println("请输入学生学号：");
 	String ch=sc.nextLine();
 	st.append(ch);
-	sd.name=st;
-	System.out.println("学生学号："+sd.name);
+	sd.data=st;
+	System.out.println("学生学号："+sd.data);
 	return sd;
 }
 public static Student remove(Student sd) {
-	StringBuffer st=new StringBuffer(sd.name);
+	StringBuffer st=new StringBuffer(sd.data);
 	Scanner sc=new Scanner(System.in);
 	int a,b;
 	System.out.println("请输入删除起始位置：");
@@ -33,12 +33,12 @@ public static Student remove(Student sd) {
 	System.out.println("请输入删除结束位置：");
 	b=sc.nextInt();
 	st.delete(a,b);
-	sd.name=st;
-	System.out.println(("删除指定位置："+sd.name));
+	sd.data=st;
+	System.out.println(("删除指定位置："+sd.data));
 	return sd;
 }
 public static Student alter(Student sd) {
-	StringBuffer st=new StringBuffer(sd.name);
+	StringBuffer st=new StringBuffer(sd.data);
 	Scanner sc=new Scanner(System.in);
 	int a,b;
 	String ch;
@@ -48,10 +48,9 @@ public static Student alter(Student sd) {
 	a=sc.nextInt();
 	System.out.println("请输入需替换区间的结束位置：");
 	b=sc.nextInt();
-	
 	st.replace(a,b,ch);
-	sd.name=st;
-	System.out.println("修改指定位置字符结果："+sd.name);
+	sd.data=st;
+	System.out.println("修改指定位置字符结果："+sd.data);
 	return sd;
 }
 }
